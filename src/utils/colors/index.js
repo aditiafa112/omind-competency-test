@@ -5,7 +5,7 @@ const mainColors = {
   // dark2: '#495A75',
   // dark3: '#8092AF',
   // grey1: '#7D8797',
-  // grey2: '#E9E9E9',
+  grey2: '#E9E9E9',
   // grey3: '#EDEEF0',
   // grey4: '#B1B7C2',
   // blue1: '#0066CB',
@@ -17,8 +17,11 @@ const mainColors = {
 
 export const colors = {
   primary: mainColors.blue1,
+  secondary: '#fff',
+  tertiery: '#000',
   background: {
     primary: mainColors.blue1,
+    secondary: '#fff',
   },
   button: {
     primary: {
@@ -30,8 +33,11 @@ export const colors = {
       text: mainColors.blue1,
     },
   },
+  text: {
+    primary: mainColors.blue1,
+    secondary: '#fff',
+  },
   // secondary: mainColors.dark1,
-  // tertiery: mainColors.blue1,
   // white: '#fff',
   // black: '#000',
   // disable: mainColors.grey3,
@@ -56,7 +62,7 @@ export const colors = {
   //     text: mainColors.grey4,
   //   },
   // },
-  // border: mainColors.grey2,
+  border: mainColors.grey2,
   // cardLight: mainColors.green2,
   // loadingBackground: mainColors.black2,
   // error: mainColors.red1,
