@@ -19,15 +19,16 @@ const styles = StyleSheet.create({
         ? colors.button.secondary.background
         : colors.button.primary.background,
     borderRadius: 10,
-    paddingVertical: 10,
+    height: 45,
+    justifyContent: 'center',
   }),
   text: (btnColor) => ({
+    fontSize: 18,
+    textAlign: 'center',
+    fontWeight: 'bold',
     color:
       btnColor === 'secondary'
         ? colors.button.secondary.text
         : colors.button.primary.text,
-    fontSize: 16,
-    fontWeight: 'bold',
-    textAlign: 'center',
   }),
 });
