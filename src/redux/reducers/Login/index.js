@@ -5,7 +5,7 @@ const initialState = {
   tokenData: null,
 };
 
-const Movie = (state = initialState, action) => {
+const Login = (state = initialState, action) => {
   switch (action.type) {
     case SUCCESS_LOGIN:
       return {
@@ -26,4 +26,4 @@ const Movie = (state = initialState, action) => {
   }
 };
 
-export default Movie;
+export default Login;

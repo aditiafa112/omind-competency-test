@@ -13,7 +13,7 @@ export const Logout = () => {
       storeData('login', null);
       dispatch({type: LOGOUT_LOGIN});
     } catch (error) {
-      console.log(error);
+      console.Error(error);
     }
   };
 };

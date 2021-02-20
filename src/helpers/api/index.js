@@ -1,6 +1,6 @@
 import {objectString} from '../../helpers';
 
-const headers = (token = false, multipart = false, bintari = false) => {
+const headers = (token = false, multipart = false) => {
   let data;
   data = {
     'Content-Type': multipart ? 'multipart/form-data' : 'application/json',
@@ -8,7 +8,7 @@ const headers = (token = false, multipart = false, bintari = false) => {
   if (token) {
     data = {
       'Content-Type': multipart ? 'multipart/form-data' : 'application/json',
-      authorization: bintari ? 'jwt ' + token : 'bearer ' + token,
+      authorization: token,
     };
   }
   return data;

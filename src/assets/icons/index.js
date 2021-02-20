@@ -6,6 +6,7 @@ import ICDiscussionOutline from './tab-discussion-outline.svg';
 import ICDiscussionFilled from './tab-discussion-filled.svg';
 import ICProfileOutline from './tab-profile-outline.svg';
 import ICProfileFilled from './tab-profile-filled.svg';
+import ICBackButton from './back-button.svg';
 
 export {
   ICHomeOutline,
@@ -16,4 +17,5 @@ export {
   ICDiscussionFilled,
   ICProfileOutline,
   ICProfileFilled,
+  ICBackButton,
 };

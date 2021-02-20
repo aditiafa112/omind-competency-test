@@ -14,7 +14,10 @@ const Button = ({text, onPress, btnColor, isLoading}) => {
       onPress={onPress}
       disabled={isLoading}>
       {isLoading ? (
-        <ActivityIndicator color={colors.primary} size="large" />
+        <ActivityIndicator
+          color={btnColor === 'secondary' ? colors.primary : colors.secondary}
+          size="large"
+        />
       ) : (
         <Text style={styles.text(btnColor)}>{text}</Text>
       )}
@@ -30,14 +33,13 @@ const styles = StyleSheet.create({
       btnColor === 'secondary'
         ? colors.button.secondary.background
         : colors.button.primary.background,
-    borderRadius: 10,
+    borderRadius: 7,
     height: 45,
     justifyContent: 'center',
   }),
   text: (btnColor) => ({
     fontSize: 18,
     textAlign: 'center',
-    fontWeight: 'bold',
     color:
       btnColor === 'secondary'
         ? colors.button.secondary.text

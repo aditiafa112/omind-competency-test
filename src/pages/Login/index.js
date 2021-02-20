@@ -33,10 +33,6 @@ const Login = ({navigation}) => {
 
   return (
     <View style={styles.page}>
-      <StatusBar
-        backgroundColor={colors.background.primary}
-        barStyle="dark-content"
-      />
       <Input
         label={'Email'}
         value={state.email}

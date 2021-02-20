@@ -9,6 +9,7 @@ const Input = ({
   secureTextEntry,
   disable,
   placeholder,
+  bgDark,
 }) => {
   const [border, setBorder] = useState(colors.border);
   const onFocusForm = () => {
@@ -23,13 +24,14 @@ const Input = ({
       <TextInput
         onFocus={onFocusForm}
         onBlur={onBlurForm}
-        style={styles.input(border)}
+        style={styles.input(border, bgDark)}
         value={value}
         onChangeText={onChangeText}
         secureTextEntry={secureTextEntry}
         editable={!disable}
         selectTextOnFocus={!disable}
         placeholder={placeholder}
+        placeholderTextColor={colors.text.grey}
       />
     </View>
   );
@@ -43,12 +45,14 @@ const styles = StyleSheet.create({
     color: colors.text.secondary,
     marginBottom: 6,
   },
-  input: (border) => ({
+  input: (border, bgDark) => ({
     borderWidth: 1,
-    borderRadius: 10,
+    borderRadius: 7,
     borderColor: border,
     paddingHorizontal: 12,
     height: 45,
-    backgroundColor: colors.background.secondary,
+    backgroundColor: bgDark
+      ? colors.background.grey
+      : colors.background.secondary,
   }),
 });
