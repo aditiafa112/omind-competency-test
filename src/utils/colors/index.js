@@ -11,7 +11,7 @@ const mainColors = {
   // blue1: '#0066CB',
   // black1: '#000000',
   // black2: 'rgba(0, 0, 0, 0.5)',
-  // red1: '#E06379',
+  red1: '#E06379',
   blue1: '#1f99d3',
 };
 
@@ -32,10 +32,15 @@ export const colors = {
       background: '#fff',
       text: mainColors.blue1,
     },
+    danger: {
+      background: mainColors.red1,
+      text: '#fff',
+    },
   },
   text: {
     primary: mainColors.blue1,
     secondary: '#fff',
+    tertiery: '#000',
   },
   // secondary: mainColors.dark1,
   // white: '#fff',

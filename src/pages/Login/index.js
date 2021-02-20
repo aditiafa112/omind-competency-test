@@ -2,10 +2,14 @@ import React, {useState} from 'react';
 import {StatusBar, StyleSheet, View, Alert} from 'react-native';
 import {Button, Input, Gap} from '../../components';
 import {colors} from '../../utils';
+import {useDispatch} from 'react-redux';
+import {Login as SignIn} from '../../redux/actions';
 
 const Login = ({navigation}) => {
+  const dispatch = useDispatch();
+  const [isLoading, setisLoading] = useState(false);
   const [state, setState] = useState({
-    username: 'tentor@gmail.com',
+    email: 'tentor@gmail.com',
     password: '123123',
   });
 
@@ -15,10 +19,14 @@ const Login = ({navigation}) => {
     });
   };
 
-  const submit = () => {
+  const submit = async () => {
+    setisLoading(true);
     if (state.username !== '' && state.password !== '') {
+      await dispatch(SignIn(state));
+      setisLoading(false);
       navigation.replace('MainApp');
     } else {
+      setisLoading(false);
       Alert.alert('login failed!', 'please check your input');
     }
   };
@@ -30,10 +38,10 @@ const Login = ({navigation}) => {
         barStyle="dark-content"
       />
       <Input
-        label={'Username'}
-        value={state.username}
-        onChangeText={(val) => updateState('username', val)}
-        placeholder={'Username'}
+        label={'Email'}
+        value={state.email}
+        onChangeText={(val) => updateState('email', val)}
+        placeholder={'email'}
       />
       <Gap height={12} />
       <Input
@@ -43,7 +51,12 @@ const Login = ({navigation}) => {
         secureTextEntry
       />
       <Gap height={36} />
-      <Button text="LOGIN" onPress={submit} btnColor={'secondary'} />
+      <Button
+        text="LOGIN"
+        onPress={submit}
+        btnColor={'secondary'}
+        isLoading={isLoading}
+      />
     </View>
   );
 };

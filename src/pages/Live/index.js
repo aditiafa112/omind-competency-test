@@ -1,11 +1,13 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {colors} from '../../utils';
+import {ILLive} from '../../assets';
 
 const Live = () => {
   return (
     <View style={styles.page}>
-      <Text>Live</Text>
+      <ILLive />
+      <Text style={styles.pageName}>Live</Text>
     </View>
   );
 };
@@ -18,5 +20,11 @@ const styles = StyleSheet.create({
     backgroundColor: colors.background.secondary,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  pageName: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: colors.text.primary,
+    marginTop: 12,
   },
 });
