@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import {StatusBar, StyleSheet, View} from 'react-native';
+import {StatusBar, StyleSheet, View, Alert} from 'react-native';
 import {Button, Input, Gap} from '../../components';
 import {colors} from '../../utils';
 
-const Login = () => {
+const Login = ({navigation}) => {
   const [state, setState] = useState({
     username: 'tentor@gmail.com',
     password: '123123',
@@ -17,9 +17,9 @@ const Login = () => {
 
   const submit = () => {
     if (state.username !== '' && state.password !== '') {
-      console.log('success');
+      navigation.replace('MainApp');
     } else {
-      console.log('failed');
+      Alert.alert('login failed!', 'please check your input');
     }
   };
 
